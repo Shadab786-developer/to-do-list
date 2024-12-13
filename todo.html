@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>To Do List Project</title>
+  <link rel="stylesheet" href="/src/output.css">
+  <style>
+    .hide {
+      display: none;
+    }
+
+    li {
+      text-align: left;
+      text-wrap: wrap;
+      height: fit-content;
+      padding: 8px;
+      border-radius: 10px;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+    }
+
+    #btn1 {
+      background-color: red;
+      padding: 0 20px 0 20px;
+      border-radius: 6px;
+    }
+
+    #btn2 {
+      background-color: green;
+      padding: 0 10px 0 10px;
+      border-radius: 100%;
+
+    }
+  </style>
+</head>
+
+<body class="bg-slate-950 text-white flex items-center justify-center h-screen w-screen">
+  <div class="bg-slate-700 rounded-md  w-fit h-fit text-center flex-nowrap " id="container">
+
+    <h1 class="text-center font-extrabold text-[25px] font-serif m-7 " id="todo-heading">To-Do List</h1>
+
+
+    <input type="text" placeholder="Add a next work" class="bg-gray-800 text-white p-5 mr-8 ml-6 rounded-md "
+      id="todo-input">
+
+    <button class="bg-purple-600 text-white p-5 rounded-lg mr-6 " id="big-btn-todo">Add Task</button>
+
+    <h2 class="text-[25px] italic mt-3 bg-slate-900">Your Added Task</h2>
+
+    <ul class="bg-gray-800 text-[20px] text-white m-7 text-center font-serif rounded-md" id="todo-item">
+      <p id="item-msg" class="bg-slate-700">You had been not added any task now</p>
+    </ul>
+
+    <h2 class="text-[25px] italic bg-slate-900">Your Completed Task</h2>
+
+    <div id="completed-task" class="bg-gray-800 text-[20px] text-white m-7 text-center font-serif rounded-md">
+      <p id="complete-msg" class="bg-slate-700">You had been not completed any task now</p>
+    </div>
+  </div>
+
+  <script src="todo.js"></script>
+</body>
+
+</html>
