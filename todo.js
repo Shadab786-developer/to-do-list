@@ -26,8 +26,8 @@ document.addEventListener("DOMContentLoaded", () => {
       complete: false,
     };
     tasks.push(newItem); // adding item into array
-    saveTask(); //calling the function to save data in local storage
     pickDataLocalStorage(newItem, tasks);
+    saveTask(); //calling the function to save data in local storage
     inputElement.value = ""; //clear input
     console.log(tasks);
   });
@@ -61,14 +61,32 @@ document.addEventListener("DOMContentLoaded", () => {
         saveTask();
       }
     });
-    li.addEventListener("click", (e) => {
-      // console.log(comtask.text);
-
-      if (e.target.id === "btn2") {
-        completeElement.appendChild(li);
+    if (tasks.push()) {
+      todoList.appendChild(li);
+      if (todoList.appendChild(li)) {
+        itemMsg.classList.add("hide");
+      } else {
+        itemMsg.classList.remove("hide");
+      }
+    } else {
+      completeElement.appendChild(li);
+      if (completeElement.appendChild(li)) {
         completeMsg.classList.add("hide");
-        completeTask.push(tasks.li);
-        tasks.pop(li);
+      } else {
+        completeMsg.classList.remove("hide");
+      }
+    }
+    li.addEventListener("click", (e) => {
+      if (e.target.id === "btn2") {
+        completeTask.push(task);
+        todoList.removeChild(li);
+        completeMsg.classList.add("hide");
+        tasks.pop(task.id);
+        li.innerHTML = `<li>${task.text}
+        <button data-id="btn1" id="btn1">Delete</button>
+        </li>`;
+        completeElement.appendChild(li);
+        saveTask();
       } else if (e.target.id === "btn1") {
         e.stopPropagation();
         completeTask.pop();
@@ -77,18 +95,11 @@ document.addEventListener("DOMContentLoaded", () => {
       } else {
         completeMsg.classList.remove("hide");
       }
-      li.innerHTML = `<li>${comtask.text}
-    <button data-id="btn1" id="btn1">Delete</button>
-    </li>`;
+
       console.log(completeTask);
       saveTask();
     });
-    if (todoList.appendChild(li)) {
-      itemMsg.classList.add("hide");
-    } else {
-      itemMsg.classList.remove("hide");
-    }
-    // todoList.appendChild(li);
+    // completeElement.appendChild(li);
   }
 
   function saveTask() {
